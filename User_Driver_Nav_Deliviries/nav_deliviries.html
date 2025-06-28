@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delivery Dashboard</title>
+  <link rel="stylesheet" href="deliviries.css">
+</head>
+<body>
+ <body>
+  <div class="container">
+    <aside>
+      <div class="logo">
+        <img src="../pictures/driver.png" alt="CartIT x Driver Logo" />
+      </div>
+      <hr class="logo-divider">
+      <p class="menu-title">Main Menu</p>
+      <nav>
+        <ul class="sidebar-list">
+          <li class="active"><a href="../Buyer_Dashboard/dashboard.html"><i class='bx bx-layer'></i>Dashboard</a></li>
+          <li><a href="../User_Driver_Nav_Deliviries/nav_deliviries.html"><i class='bx bx-package'></i>Deliveries</a></li>
+          <li><a href="../User_Driver_Nav_Withdrawal/withdrawal.css"><i class='bx bx-money'></i>Cash Deposit</a></li>
+          <li><a href="../User_Driver_Nav_Settings/driverprofile.php"><i class='bx bx-user'></i>My Profile</a></li>
+        </ul>
+      </nav>
+      <button class="logout"><i class='bx bx-log-out'></i> Log-out</button>
+    </aside>
+
+    <main>
+      <header class="user-info-container">
+        <div class="user-info-top">
+          <div class="user-profile">
+            <i class='bx bxs-user-circle'></i>
+          </div>
+          <div class="user-text">
+            <p>@drivername</p>
+            <p>driver@gmail.com</p>
+          </div>
+        </div>
+        <hr class="user-info-divider">
+      </header>
+
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>ORDER ID</th>
+              <th>BUYER NAME</th>
+              <th>DELIVERY ADDRESS</th>
+              <th>EARNINGS</th>
+              <th>STATUS</th>
+              <th>ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>P1001</td>
+              <td>Yonexph</td>
+              <td>Carsadang Bago I, Imus Cavite City</td>
+              <td>110</td>
+              <td><span class="status pending">Pending</span></td>
+              <td class="action-buttons">
+                <button class="view">view</button>
+                <button class="update">update</button>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>P1002</td>
+              <td>Itelph</td>
+              <td>Bucandala 2, Imus Cavite, City</td>
+              <td>120</td>
+              <td><span class="status pending">Pending</span></td>
+              <td class="action-buttons">
+                <button class="view">view</button>
+                <button class="update">update</button>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>P1003</td>
+              <td>Kaiden Breaks</td>
+              <td>Aguinaldo Highway, Cavite</td>
+              <td>150</td>
+              <td><span class="status delivered">Delivered</span></td>
+              <td class="action-buttons">
+                <button class="view">view</button>
+                <button class="update">update</button>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>P1004</td>
+              <td>Jedrick Arevalo</td>
+              <td>Imus National Cavite City</td>
+              <td>120</td>
+              <td><span class="status delivered">Delivered</span></td>
+              <td class="action-buttons">
+                <button class="view">view</button>
+                <button class="update">update</button>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>P1005</td>
+              <td>Dellon Brooks</td>
+              <td>Cavite Dasma City</td>
+              <td>200</td>
+              <td><span class="status delivered">Delivered</span></td>
+              <td class="action-buttons">
+                <button class="view">view</button>
+                <button class="update">update</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pagination">
+          <button>Prev</button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

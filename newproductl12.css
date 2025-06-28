@@ -1,0 +1,649 @@
+/* sellerprofile.css */
+html, body {
+  height: auto;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #130b0b;
+  font-family: 'Poppins',  sans-serif;
+
+}
+
+.container {
+display: absolute;
+  width: 100%;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 70px 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+  height: 100vh;
+}
+.logo {
+  text-align: left;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.material-icons-outlined {
+  vertical-align: middle;
+  line-height: 1px;
+}
+/* HEADER - MATCHING DASHBOARD DESIGN */
+.header-container {
+    grid-area: header;
+    border-bottom: 2px solid #E6E6E6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    background: white;
+    height: 70px;
+    box-sizing: border-box;
+    gap: 20px;
+    position: relative;
+    z-index: 10;
+      display: flex;
+  align-items: center;
+  padding: 0 30px;
+  height: 70px;
+  background-color: white;
+  gap: 15px; /* spacing between items */
+}
+
+
+/* Icons moved to the left */
+.icons {
+  margin-left: auto; /* pushes .icons to the right in flex container */
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+/* Search bar in the middle */
+.search-bar{
+  flex: 1; /* take all available horizontal space */
+  max-width: 600px; /* optional max width */
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 45px;
+}
+
+.search-bar input{
+    border: none;
+    background: transparent;
+    padding: 0 20px;
+    flex-grow: 1;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-bar i{
+    font-size: 20px;
+    color: white;
+    height: 45px;
+    width: 50px;
+    background-color: #0052cc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar i:hover{
+    background-color: #003d99;
+}
+
+/* Profile wrapper on the right */
+.profile-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 0 0 auto;
+    order: 3;
+}
+
+/* Buttons inside icons */
+.profile-btn,
+.edit-dp-btn {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.profile-btn:hover,
+.edit-dp-btn:hover {
+    background-color: #e9ecef;
+    transform: translateY(-1px);
+}
+
+.profile-btn i,
+.edit-dp-btn i {
+    font-size: 18px;
+    color: #333;
+}
+
+.icon-separator {
+    font-size: 16px;
+    color: #dee2e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+/* Profile image container */
+.dp-container {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #e9ecef;
+}
+
+.dp-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+}
+
+/* User info text */
+.user-info {
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: #495057;
+}
+
+/* DROPDOWN - MATCHING DASHBOARD DESIGN */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-btn:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown-btn i {
+    color: #6c757d;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-btn:hover i {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    display: none;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    min-width: 140px;
+    z-index: 9999;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown-content.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-content a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #495057;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8f9fa;
+    color: #0052cc;
+}
+
+.dropdown-content a i {
+    font-size: 16px;
+}
+
+/* Sidebar */
+.sidebar {
+  grid-area: sidebar;
+  width: 220px;
+  background: #0046ad;
+  color: white;
+  padding-top: 20px;
+  height: 100%;
+}
+
+.sidebar-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+}
+
+.sidebar-list-item{
+margin-left: 10px;
+}
+.menu-title {
+  font-size: 14px;
+  margin-top: 1rem;
+  margin-left: 15px;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 15px 10px;
+  margin: 10px 0;
+  border-radius: 20px 0 0 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.menu a:hover {
+  margin-left: 15px;
+  background: white;
+  color: #0046ad;
+}
+
+.menu a.active {
+  background: white;
+  color: #0046ad;
+}
+.sidebar-list i{
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  font-size: 25px;
+  margin-left: 15px;
+}
+
+.user-item {
+  margin-left: 5px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  color: #246dec;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 25px;
+}
+
+.profile-section {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+  width: 100%;
+  gap: 30px;
+  height: 100%; /* fill the available grid area */
+}
+
+
+.profile_image {
+  width: 120px;           /* ✅ Increase this value as needed */
+  height: 110px;
+  border-radius: 50%;     /* ✅ Makes it a circle */
+  object-fit: cover;      /* ✅ Ensures image doesn’t stretch */
+  overflow: hidden;       /* ✅ If it's a container */
+  display: block;         /* Remove inline gaps if needed */
+}
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.profile-details .name {
+  font-weight: bold;
+}
+
+.profile-title{
+  display: flex;
+  text-align: left;
+margin-right: 740px;
+}
+.profile-box {
+  background-color: white;
+  border-radius:8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  width: 900px;
+  margin-top: -30px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-row label {
+  width: 150px;         /* set a fixed width for alignment */
+  margin-right: 10px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.form-row input {
+  flex: 1;               /* input takes remaining space */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-row textarea {
+  width: 85%;
+  padding: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+  resize: none; /* Optional: prevent manual resize */
+  background-color: #e6e6e6;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+
+.shipping-address {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border:1px solid #E6E6E6;
+    width: 900px;
+}
+.section-title {
+  border-bottom: 1px solid #E6E6E6; /* blue line */
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.profile-box h2,
+.shipping-address h2 {
+  margin-top: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.profile-pic{
+  width:130px;
+  height:90px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.profile-pic-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.img-row{
+  display: flex;
+  justify-content: flex-end; /* aligns items to the right */
+  align-items: center; /* vertical alignment */
+  gap:10px;
+}
+.img-column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Aligns content (image & button) to the right */
+  gap: 10px; /* Spacing between image and button */
+}
+.imgprev {
+  width: 500px;
+  height: 300px;
+  margin-left: 300px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.chooseimg-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.chooseimg {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #004AAD;
+  border: 1px solid #E6E6E6;
+  padding: 10px 16px;
+  border-radius: 10px;
+  width: 120px;
+  margin-bottom: 5px; /* Add space below button */
+}
+
+.variation-image-preview-container {
+  width: 100%;
+}
+
+.image-slider {
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.slide {
+  flex: 0 0 auto; /* Prevent shrinking and allow scroll */
+  width: 120px;
+  height: 120px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.image-slider::-webkit-scrollbar {
+  height: 6px;
+}
+.image-slider::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-pic-butttons {
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 50px;
+  display: flex;
+}   
+.profile-section input[type="text"], input[type="password"], input[type="email"],input[type="tel"] ,input[type="number"] {
+      width: 433px;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #E6E6E6;
+
+    }
+.data-fields p {
+  margin: 8px 0;
+  font-size: 20px;
+}
+.data-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.previewImage{
+margin-bottom: 100px;
+}
+.edit-btn {
+  margin-top: -20px;
+  margin-bottom: 50px;
+  padding: 20px 25px;
+  background-color: #003366;
+  color: white; 
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.button-row {
+  display: flex;
+  gap: 10px; /* space between buttons */
+  justify-content: flex-start; /* or space-between / flex-start depending on layout */
+  align-items: flex-start;
+    margin-right: 680px;
+}
+
+.edit-bttn {
+  padding: 10px 20px;
+  background-color: #003366;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100px;
+  border: none;
+}
+
+
+.address-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1px;
+  margin-top: 20px;
+}
+
+.address-grid div {
+  padding: 10px;
+  background-color: #f9fbff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.address-grid label{
+  margin-top: 15px;
+  margin-left: 35px;
+}
+.address-grid textarea {
+  width: 151%;
+  padding: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+  resize: none; /* Optional: prevent manual resize */
+  background-color: #e6e6e6;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+.basic-info-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.full-width {
+  grid-column: 1 / -1; /* span both columns */
+}
+
+.chooseimg {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #004AAD;
+  border: 1px solid #E6E6E6;
+  padding: 8px 16px;
+  border-radius: 10px;
+  width: fit-content;
+  margin-left: 40px;
+}
+.preview-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.preview-slider .slide {
+  text-align: center;
+}
+

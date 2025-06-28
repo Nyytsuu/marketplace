@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Earnings</title>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+   <aside>
+    <div class="logo">
+      <img src="logo_1.png" alt="CartIT x Driver Logo" />
+    </div>
+    <hr class="logo-divider">
+    <p class="menu-title">Main Menu</p>
+
+    <nav>
+      <ul class="sidebar-list">
+        <li>
+          <a href="#"><i class='bx bx-layer'></i>Dashboard</a>
+        </li>
+        <li>
+          <a href="#"><i class='bx bx-package'></i>Deliveries</a>
+        </li>
+        <li>
+          <a href="#"><i class='bx bx-money'></i>Cash Deposit</a>
+        </li>
+        <li class="active">
+          <a href="#"><i class='bx bx-user'></i>My Profile</a>
+        </li>
+      </ul>
+    </nav>
+
+    <button class="logout"><i class='bx bx-log-out'></i> Log-out</button>
+  </aside>
+ 
+
+  <main>
+    <header class="header">
+      <div class="user-info">
+        <p>@drivername</p>
+        <p>driver@gmail.com</p>
+      </div>
+    </header>
+
+    <section class="content">
+      <h1>Manage Your Earnings</h1>
+      <p class="subtitle">Track your earnings and easily deposit or withdraw funds. Stay updated on your balance, and cash out when you're ready.</p>
+
+      <div class="summary-cards">
+        <div class="card">
+          <p>Total Delivered</p>
+          <h2>3434</h2>
+        </div>
+        <div class="card">
+          <p>Pending Withdrawals</p>
+          <h2>₱340</h2>
+        </div>
+        <div class="card">
+          <p>Available Balance</p>
+          <h2>₱340</h2>
+        </div>
+      </div>
+
+      <div class="transactions">
+        <div class="table-section">
+          <div class="table-header">
+            <h3>All Transaction</h3>
+            <button class="btn">+ Request Withdrawal</button>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th><th>Type</th><th>Amount</th><th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>APR 27, 2025</td><td>delivery fee</td><td>+ ₱99</td><td class="status completed">Completed</td></tr>
+              <tr><td>MAY 27, 2023</td><td>delivery fee</td><td>+ ₱120</td><td class="status completed">Completed</td></tr>
+              <tr><td>JUN 27, 2025</td><td>withdrawal</td><td>- ₱248</td><td class="status processing">Processing</td></tr>
+              <tr><td>DEC 27, 2025</td><td>delivery fee</td><td>+ ₱137</td><td class="status completed">Completed</td></tr>
+              <tr><td>NOV 27, 2025</td><td>withdrawal</td><td>- ₱940</td><td class="status completed">Completed</td></tr>
+              <tr><td>FEB 27, 2025</td><td>delivery fee</td><td>+ ₱150</td><td class="status processing">Processing</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="faq">
+          <h3>❓ FAQ</h3>
+          <p><strong>Q1: How to withdraw:</strong><br>
+          Withdrawals are processed within 24 hours. Check your available balance to see if you're eligible for a payout.</p>
+          <p><strong>Q2: How can I check if I am eligible for a withdrawal?</strong><br>
+          You can check your available balance in the dashboard. If your earnings meet the minimum withdrawal requirements, you will be eligible to request a payout.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+

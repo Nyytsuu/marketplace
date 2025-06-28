@@ -1,0 +1,19 @@
+Color: red, Image: uploads/variationimages/var_68377884bc95a_Screenshot 2025-03-25 132344.png
+Color: khaki, Image: uploads/variationimages/var_683f2d5deefb4_image.png
+Color: blue, Image: uploads/variationimages/var_683ad26652227_Screenshot (70).png
+Color: cyan, Image: uploads/variationimages/var_683ad5cd8b588_Screenshot (70).png
+Color: cyan, Image: uploads/variationimages/var_683ad5cd8b588_Screenshot (70).png
+Color: , Image: uploads/productimages/main_6844394950833_2.png
+Color: , Image: uploads/productimages/main_6844394950833_2.png
+Color: , Image: uploads/productimages/main_6844dc94d03cc_image_2025-06-08_084156728.png
+Color: , Image: uploads/productimages/main_684417c33df0f_ph-11134207-7r98q-lvwjclcbmlwh08.webp
+Color: , Image: uploads/productimages/main_6844933a3d7b0_208.png
+Color: blue, Image: uploads/variationimages/var_68444885c1be7_49.png
+Color: , Image: uploads/productimages/main_684410b16b2a8_ph-11134207-7rasc-m96srpgm6h7120.png
+Color: , Image: uploads/productimages/main_68440e153bb28_7a1b9ad0322f1d2b46e25d9101483931.png
+Color: , Image: uploads/productimages/main_6844a08a59be0_247.png
+Color: , Image: uploads/productimages/main_68443be3cd7d4_26.png
+Color: , Image: uploads/productimages/main_684421b186dfc_ph-11134207-7rask-m63s3og448zm52.png
+Color: , Image: uploads/productimages/main_6844933a3d7b0_208.png
+Color: , Image: uploads/productimages/main_68445e27eb03c_117.png
+Color: , Image: uploads/productimages/main_68445e27eb03c_117.png

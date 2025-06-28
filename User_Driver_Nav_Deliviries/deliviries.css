@@ -1,0 +1,473 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+body {
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  background-color: #0033a0;
+
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+aside {
+  width: 309px;
+  background-color: #ffffff;
+  color: #0033a0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+  height: 100vh;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Logo */
+aside .logo {
+  padding: 10px 0;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+aside .logo img {
+  max-width: 300px;
+  height: auto;
+  margin-top: -25px;
+}
+
+.logo-divider {
+  width: 90%;
+  border: none;
+  border-bottom: 1px solid #0033a0;
+  margin: 0 auto 10px auto;
+}
+
+.menu-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+  padding: 10px 35px;
+  width: 100%;
+}
+
+.sidebar-list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-list li {
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 0;
+      margin: 0;
+      width: 65%;  
+      margin-right: 150px;
+      margin-left: 97px;
+      margin-bottom: 10px;
+}
+
+.sidebar-list li a {
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 12px 25px;
+  color: #0033a0;
+  font-weight: 500;
+  gap: 13px;
+  width: 100%;
+  border-radius: 30px 0 0 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.sidebar-list li a i {
+  font-size: 20px;
+  color: inherit;
+}
+
+.sidebar-list li a:hover {
+  background-color: #0033a0;
+  color: white;
+}
+
+.sidebar-list li a:hover i {
+  color: white;
+}
+
+.sidebar-list li.active a {
+  background-color: #0033a0;
+  color: white;
+  border-radius: 30px 0 0 30px;
+  padding: 10px 50px 10px 150px;
+}
+
+.sidebar-list li.active a::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 20%;
+  height: 60%;
+  width: 5px;
+  background-color: white;
+  border-radius: 0 5px 5px 30px;
+}
+
+.sidebar-list li.active a i {
+  color: white;
+  margin-left: -100px;
+}
+
+.logout {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0033a0;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  border-top: 2px solid #002e8c;
+}
+
+.logout i {
+  margin-right: 8px;
+}
+
+
+/* Main Content Area */
+main {
+  flex: 1;
+  padding: 30px;
+  background-color: #0033a0;
+  overflow-y: auto;
+}
+
+.user-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  color: white;
+}
+
+.user-info-top {
+  display: flex;
+  margin-top: -30px;
+  align-items: center;
+  margin-left: auto;
+  gap: 10px;
+}
+.user-profile i {
+  font-size: 50px;
+  color: #d9d9d9;
+}
+
+.user-text {
+  text-align: right;
+}
+
+.user-text p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.user-info-divider {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid white;
+  margin: 15px 0;
+}
+
+
+/* White card container ONLY around deliveries */
+.content-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  color: #222;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+}
+
+/* Deliveries section styles */
+.deliveries-section h1 {
+  color: #0033a0;
+  margin-bottom: 5px;
+}
+
+.deliveries-section .subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Table styling */
+.deliveries-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0;
+  background-color: transparent;
+}
+
+.deliveries-table thead th {
+  background-color: #F2F2F2;
+  padding: 10px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid #ddd;
+}
+
+.deliveries-table tbody td {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.deliveries-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Status badges */
+.status {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  color: white;
+  display: inline-block;
+  min-width: 75px;
+  text-align: center;
+}
+
+.status.pending {
+  background-color: #f2c94c;
+  color: #333;
+}
+
+.status.delivered {
+  background-color: #27ae60;
+}
+
+/* Action buttons */
+.action-buttons button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.action-buttons .view {
+  background-color: #555;
+}
+
+.action-buttons .update {
+  background-color: #eb5757;
+}
+
+.action-buttons button:hover {
+  filter: brightness(0.9);
+}
+
+/* Pagination styling */
+.pagination {
+  margin-top: 15px;
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #eee;
+  font-size: 14px;
+}
+
+.pagination button.active {
+  background-color: #0033a0;
+  color: white;
+}
+
+.pagination button:hover:not(.active) {
+  background-color: #ccc;
+}
+
+/* User info divider */
+.user-info-divider {
+  border-bottom: 1px solid #ccc;
+  margin: 15px 0 30px 0;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #0033a0;
+}
+
+.modal-content p {
+  margin-bottom: 15px;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.modal-content select,
+.modal-content input[type="file"] {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.modal-content button {
+  background-color: #0033a0;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #002080;
+}
+
+/* Modal Overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Box */
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Modal Headings */
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+/* Update Form Styles */
+#updateForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#updateForm label {
+  font-weight: 500;
+  color: #444;
+}
+
+#updateForm select,
+#updateForm input[type="file"] {
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Buttons inside modal */
+#updateForm button[type="submit"],
+.modal-content button:not(.close-btn) {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 16px;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+#updateForm button[type="submit"]:hover,
+.modal-content button:not(.close-btn):hover {
+  background-color: #218838;
+}
+
+/* Cancel Button */
+.modal-content button:last-child {
+  background-color: #dc3545;
+  margin-top: 10px;
+}
+
+.modal-content button:last-child:hover {
+  background-color: #c82333;
+}

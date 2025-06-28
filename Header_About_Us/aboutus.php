@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<title>Contact Us</title>
+   <link rel="stylesheet" href="aboutus.css">
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<header class="top-bar">
+    <div class="container">
+      <div class="social-section">
+        <span style="font-size: 13px;">Follow us:</span>
+        <div class="social-icon">
+          <i class='bx bxl-facebook'></i>
+          <i class='bx bxl-instagram'></i>
+          <i class='bx bxl-twitter'></i>
+        </div>
+      </div>
+      <div class="divider">|</div>
+      <a href="#">Be a Rider</a>
+      <div class="divider">|</div>
+      <a href="#">Be a Seller</a>
+      <div class="divider">|</div>
+         <a href="#">Sign In</a>
+      <span>/</span>
+           <a href="#">Sign Up</a>
+    </div>
+ </header>
+    <header class="main-header">
+            <div class="containerss header-container">
+                <nav class="nav-links">
+                        <a href="#">Home</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Contact Us</a>
+                </nav>
+                <a href="#" class="logo">
+                    <img src="cartit.png" alt="CartIT Logo">
+                </a>       
+                   <div class="nav-right">
+                     
+                      <i class='bx bx-cart'></i>| 
+                     <div class="cart-info">
+                              <span>Shopping cart</span>
+                              <span style="color: blue;">$0.00</span>
+                    </div>
+                 </div>
+            </div>
+      </header>
+<body>
+    <nav class="breadcrumb" aria-label="breadcrumb">
+    <div class="containers">
+      <a href="#" class="btns">
+   <i class='bx bx-home-alt'></i></a> 
+           >
+      <a href="#" style="color:blue">Contact Us</a>
+    </div>
+  </nav>
+  
+
+  <!-- Hero Section 1 -->
+  <section class="hero">
+    <img src="hero1.png" alt="Cart image" />
+    <div class="hero-content">
+      <h2>100% Trusted Online Marketplace</h2>
+      <p>Discover a marketplace built on trust and convenience – CartIT ensures secure transactions and reliable sellers for every purchase.</p>
+      <a href="#" class="btn">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Hero Section 2 -->
+<section class="hero">
+  <img src="hero2.png" alt="Shoppers image" />
+  <div class="hero-content">
+    <h2>100% Trusted Online Marketplace</h2>
+    <p>
+      CartIT Marketplace offers seamless navigation across a wide range of products, with customer support always ready to help.
+    </p>
+    <div class="features">
+  <div class="feature-item">
+    <div class="icon-box"><span class="material-icons">support_agent</span></div>
+    <div>
+      <strong>Customer Support 24/7</strong>
+      <p>Instant access to Contact</p>
+    </div>
+  </div>
+  <div class="feature-item">
+    <div class="icon-box"><span class="material-icons">local_shipping</span></div>
+    <div>
+      <strong>Fast Delivery</strong>
+      <p>Speedy and secure delivery</p>
+    </div>
+  </div>
+  <div class="feature-item">
+    <div class="icon-box"><span class="material-icons">verified_user</span></div>
+    <div>
+      <strong>Secure Payment</strong>
+      <p>We ensure your money is safe</p>
+    </div>
+  </div>
+  <div class="feature-item">
+    <div class="icon-box"><span class="material-icons">local_mall</span></div>
+    <div>
+      <strong>Free Shipping</strong>
+      <p>Free shipping for you</p>
+    </div>
+  </div>
+</div>
+</section>
+
+ <!-- Team Section -->
+<section class="team-section">
+  <h2>Our Core Team Members</h2>
+
+  <!-- First Row -->
+  <div class="team-row">
+    <div class="member">
+      <img src="railee.png" alt="Railee Babiano" />
+      <h4>Railee Babiano</h4>
+      <p>Head of Developer</p>
+    </div>
+    <div class="member">
+      <img src="diana.jpg" alt="Diana Mae" />
+      <h4>Diana Mae</h4>
+      <p>UI/UX Designer</p>
+    </div>
+    <div class="member">
+      <img src="marjess.jpg" alt="Marjess Villamor" />
+      <h4>Marjess Villamor</h4>
+      <p>Product Designer</p>
+    </div>
+  </div>
+
+  <!-- Second Row -->
+  <div class="team-row">
+    <div class="member">
+      <img src="daniel.jpg" alt="Raffy Jay Ajero" />
+      <h4>Raffy Jay Ajero</h4>
+      <p>Senior Developer</p>
+    </div>
+    <div class="member">
+      <img src="kupal.jpg" alt="Jedrick Arevalo" />
+      <h4>Jedrick Arevalo</h4>
+      <p>Chief Executive Officer</p>
+    </div>
+    <div class="member">
+      <img src="mark.jpg" alt="Mark Gadiel Montaño" />
+      <h4>Mark Gadiel Montaño</h4>
+      <p>Assistant of CEO</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div><h2>500k+</h2><p>Happy Customers</p></div>
+    <div><h2>4.9/5</h2><p>Average Customer Rating</p></div>
+    <div><h2>1,000</h2><p>Join CartIT Founding Members</p></div>
+    <div><h2>100%</h2><p>Positive Feedback</p></div>
+  </section>
+
+<footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="logo white.png" alt="CartIT Logo">
+        <p>CartIT – Where Smart Shopping Begins. Discover quality finds, hot deals, and fast delivery—all in one cart.</p>
+        <div class="social-icons">
+          <i class='bx bxl-facebook'></i>
+          <i class='bx bxl-instagram'></i>
+          <i class='bx bxl-twitter'></i>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>My Account</h3>
+        <a href="#">My Account</a>
+        <a href="#">Order History</a>
+        <a href="#">Shopping Cart</a>
+      </div>
+      <div class="footer-links">
+        <h3>Helps</h3>
+        <a href="#">Contact</a>
+        <a href="#">Terms & Condition</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="footer-links">
+        <h3>Proxy</h3>
+        <a href="#">About Us</a>
+        <a href="#">Browse All Product</a>
+      </div>
+      <div class="footer-contact">
+        <h3>Customer Supports:</h3>
+        <p>(63+) 000 0000 000</p>
+        <h3>Contact Us</h3>
+        <p>info@cartit.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 CartIT eCommerce. All Rights Reserved</p>
+      <div class="footer-payments">
+        <div class="payment-icon">
+          <i class='bx bx-lock'></i>
+          <span>
+            Secure<br>Payment
+          </span>
+        </div>
+        <div class="payment-icons">
+          <i class='bx bxl-visa'></i>
+          <i class='bx bxl-mastercard'></i>
+        </div>
+      </div>
+    </div>
+  </footer>

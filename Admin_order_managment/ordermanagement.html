@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="../Admin_order_managment/ordermanagement.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <title>Dashboard Admin</title>
+</head>
+<body class="bg-gray-100 font-poppins">
+  <div class="grid-container">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-title">
+        <div class="sidebar-brand">
+          <img src="../5. pictures/admin.png" alt="Logo" class="logo">
+        </div>
+      </div>
+
+      <ul class="sidebar-list">
+        <div class="sidebar-line"></div>
+<li class="sidebar-list-item">
+  <a href="../Admin_Dashboard/dashboard.php">
+    <span class="material-icons-outlined">dashboard</span>
+    Dashboard
+  </a>
+</li>
+
+<li class="sidebar-list-item">
+  <a href="../Admin_User_management/user-management.php">
+    <span class="material-icons-outlined">inventory_2</span>
+    User Management
+  </a>
+</li>
+
+<li class="sidebar-list-item dashboard-item">
+  <a href="../Admin_order_managment/ordermanagement.php">
+    <span class="material-icons-outlined">add_shopping_cart</span>
+    Order Management
+  </a>
+</li>
+
+        <li class="sidebar-list-item">
+          <a href="../admin" target="_blank">
+            <span class="material-icons-outlined">shopping_cart</span>
+            Category Management
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="../Admin_Withdrawal/withdrawal.php" target="_blank">
+            <span class="material-icons-outlined">poll</span>
+            Withdrawal Management
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="../Admin_Delivery_Management/delivery_man.php" target="_blank">
+            <span class="material-icons-outlined">local_shipping</span>
+            Delivery Management
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Header -->
+    <header class="header">
+      <form class="search-bar">
+        <i class="bx bx-search text-gray-500 mr-2"></i>
+        <input type="text" placeholder="Search" class="bg-transparent outline-none w-full text-sm">
+      </form>
+
+      <div class="relative flex items-center space-x-4">
+        <i class='bx bxs-user-circle text-3xl'></i>
+        <div class="text-sm text-right">
+          <p class="font-medium">@Yanna Fernandez</p>
+          <p class="text-gray-500 text-xs">yannafern@gmail.com</p>
+        </div>
+        <i class='bx bx-chevron-down cursor-pointer text-xl' id="dropdownToggle"></i>
+        <div class="absolute top-12 right-0 bg-white shadow rounded hidden" id="logoutPopup">
+          <button class="block px-4 py-2 text-sm hover:bg-gray-100" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+      <section class="content">
+        <h2>Order Management</h2>
+        <p>Shows all orders placed on the platform along with their current statuses, such as pending, shipped, delivered, or canceled. Includes detailed order information.</p>
+        <table class="order-table">
+          <thead>
+            <tr>
+              <th><input type="checkbox" /></th>
+              <th>ORDER ID</th>
+              <th>BUYER</th>
+              <th>SELLER</th>
+              <th>PRODUCT</th>
+              <th>TOTAL</th>
+              <th>STATUS</th>
+              <th>ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><input type="checkbox" /></td><td>P1001</td><td>Tanner Finsha</td><td>Tanner Finsha</td><td><strong>Item 1</strong></td><td><strong>10 pesos</strong></td><td><span class="badge pending">Pending</span></td><td><button class="view-btn">👁 View</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>P1002</td><td>Tanner Finsha</td><td>Tanner Finsha</td><td><strong>Item 2</strong></td><td><strong>10 pesos</strong></td><td><span class="badge delivered">Delivered</span></td><td><button class="view-btn">👁 View</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>P1002</td><td>Tanner Finsha</td><td>Tanner Finsha</td><td><strong>Item 2</strong></td><td><strong>10 pesos</strong></td><td><span class="badge delivered">Delivered</span></td><td><button class="view-btn">👁 View</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>P1001</td><td>Tanner Finsha</td><td>Tanner Finsha</td><td><strong>Item 1</strong></td><td><strong>10 pesos</strong></td><td><span class="badge pending">Pending</span></td><td><button class="view-btn">👁 View</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>P1002</td><td>Tanner Finsha</td><td>Tanner Finsha</td><td><strong>Item 2</strong></td><td><strong>10 pesos</strong></td><td><span class="badge delivered">Delivered</span></td><td><button class="view-btn">👁 View</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>P1002</td><td>Tanner Finsha</td><td>Tanner Finsha</td><td><strong>Item 2</strong></td><td><strong>10 pesos</strong></td><td><span class="badge delivered">Delivered</span></td><td><button class="view-btn">👁 View</button></td></tr>
+
+        </table>
+
+<div class="pagination">
+  <button>Prev</button>
+  <button class="active">1</button>
+  <button>2</button>
+  <button>Next</button>
+</div>
+
+
+  <script>
+    const toggleBtn = document.getElementById('dropdownToggle');
+    const popup = document.getElementById('logoutPopup');
+
+    toggleBtn.addEventListener('click', () => {
+      popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (!toggleBtn.contains(e.target) && !popup.contains(e.target)) {
+        popup.style.display = 'none';
+      }
+    });
+
+    document.getElementById('logoutBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      alert("Logging out...");
+    });
+  </script>
+</body>
+</html>

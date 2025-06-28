@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Withdrawal Management</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="withdrawal.css">
+</head>
+<body>
+  <div class="grid-container">
+    <header class="header">
+      <div class="header-left">
+        <span class="material-icons-outlined">search</span>
+      </div>
+      <div class="header-right">
+        <span class="material-icons-outlined">account_circle</span>
+      </div>
+    </header>
+
+    <aside id="sidebar">
+      <div class="sidebar-title">
+        <div class="sidebar-brand">
+          <img src="adminlogo-white.png" alt="Logo" class="logo">
+        </div>
+      </div>
+<ul class="sidebar-list">
+<div class="sidebar-line"></div> <!-- the line -->
+  <li class="sidebar-list-item">
+    <a href="#">
+      <span class="material-icons-outlined">dashboard</span>
+      Dashboard
+    </a>
+  </li>
+
+        <li class="sidebar-list-item">
+          <a href="admin_user.html" target="_blank">
+            <span class="material-icons-outlined">inventory_2</span>
+            User Management
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="#" target="_blank">
+            <span class="material-icons-outlined">add_shopping_cart</span>
+            Order Management
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="#" target="_blank">
+            <span class="material-icons-outlined">shopping_cart</span>
+            Category Management
+          </a>
+        </li>
+        <li class="sidebar-list-item dashboard-item">
+          <a href="#" target="_blank">
+            <span class="material-icons-outlined">poll</span>
+            Withdrawal Management
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="#" target="_blank">
+            <span class="material-icons-outlined">local_shipping</span>
+            Delivery Management
+          </a>
+        </li>
+      </ul>
+    </aside> 
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="container">
+      <h1>Withdrawal Management</h1>
+      <p class="description">Manage withdrawal requests from sellers and buyers efficiently.</p>
+      
+      <div class="tabs">
+        <div class="tab active" onclick="showContent('seller')">Seller</div>
+        <div class="tab" onclick="showContent('buyer')">Buyer</div>
+      </div>
+      
+      <div class="status-filter">
+        <div class="status-tab active">All Status</div>
+        <div class="status-tab">Pending</div>
+        <div class="status-tab">Rejected</div>
+        <div class="status-tab">Approved</div>
+      </div>
+      
+      <!-- Seller Content (Visible by default) -->
+      <div id="seller-content" class="content-section active">
+        <table>
+          <thead>
+            <tr>
+              <th>Request ID</th>
+              <th>Seller ID</th>
+              <th>Requested Amount</th>
+              <th>Withdrawal Method</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>W1</td>
+              <td>P1</td>
+              <td>20000</td>
+              <td>GCash</td>
+              <td><span class="status pending">Pending</span></td>
+              <td class="actions">
+                <button class="view">View</button>
+                <button class="approve">Approve</button>
+                <button class="reject">Reject</button>
+              </td>
+            </tr>
+            <tr>
+              <td>W2</td>
+              <td>P2</td>
+              <td>10000</td>
+              <td>Bank</td>
+              <td><span class="status rejected">Rejected</span></td>
+              <td class="actions">
+                <button class="view">View</button>
+                <button class="approve">Approve</button>
+                <button class="reject">Reject</button>
+              </td>
+            </tr>
+            <tr>
+              <td>W3</td>
+              <td>P3</td>
+              <td>15000</td>
+              <td>GCash</td>
+              <td><span class="status approved">Approved</span></td>
+              <td class="actions">
+                <button class="view">View</button>
+                <button class="approve">Approve</button>
+                <button class="reject">Reject</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Buyer Content (Hidden by default) -->
+      <div id="buyer-content" class="content-section">
+        <table>
+          <thead>
+            <tr>
+              <th>Request ID</th>
+              <th>Buyer ID</th>
+              <th>Requested Amount</th>
+              <th>Withdrawal Method</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BW1</td>
+              <td>B1</td>
+              <td>5000</td>
+              <td>GCash</td>
+              <td><span class="status pending">Pending</span></td>
+              <td class="actions">
+                <button class="view">View</button>
+                <button class="approve">Approve</button>
+                <button class="reject">Reject</button>
+              </td>
+            </tr>
+            <tr>
+              <td>BW2</td>
+              <td>B2</td>
+              <td>8000</td>
+              <td>Bank</td>
+              <td><span class="status approved">Approved</span></td>
+              <td class="actions">
+                <button class="view">View</button>
+                <button class="approve">Approve</button>
+                <button class="reject">Reject</button>
+              </td>
+            </tr>
+            <tr>
+              <td>BW3</td>
+              <td>B3</td>
+              <td>6000</td>
+              <td>GCash</td>
+              <td><span class="status rejected">Rejected</span></td>
+              <td class="actions">
+                <button class="view">View</button>
+                <button class="approve">Approve</button>
+                <button class="reject">Reject</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+<div id="viewModal" class="modal">
+    <div class="modal-content">
+      <form>
+        <label>Withdrawal Amount</label>
+        <input type="text" id="amount" readonly>
+
+        <label>Payment Method</label>
+        <input type="text" id="method" readonly>
+
+        <label>Card Number</label>
+        <input type="text" id="card" readonly>
+
+        <label>Card Full Name</label>
+        <input type="text" id="fullname" readonly>
+
+        <button type="button" onclick="closeModal()">Back</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="approvedModal" class="modal">
+  <div class="modal-content" style="text-align: center;">
+    <div style="font-size: 40px; color: black;">✓</div>
+    <h2 style="color: #007bff;">Approved</h2>
+    <button onclick="closeApprovedModal()">Back</button>
+  </div>
+</div>
+
+<div id="rejectedModal" class="modal">
+  <div class="modal-content" style="text-align: center;">
+    <div style="font-size: 40px; color: red;">✖</div>
+    <h2 style="color: red;">Rejected</h2>
+    <button onclick="closeRejectedModal()">Back</button>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.reject').forEach(btn => {
+  btn.addEventListener('click', function () {
+    document.getElementById('rejectedModal').style.display = 'flex';
+  });
+});
+
+function closeRejectedModal() {
+  document.getElementById('rejectedModal').style.display = 'none';
+}
+
+</script>
+
+<script>
+  document.querySelectorAll('.approve').forEach(btn => {
+  btn.addEventListener('click', function () {
+    document.getElementById('approvedModal').style.display = 'flex';
+  });
+});
+
+function closeApprovedModal() {
+  document.getElementById('approvedModal').style.display = 'none';
+}
+
+</script>
+  <script>
+    document.querySelectorAll('.view').forEach(btn => {
+    btn.addEventListener('click', function () {
+    const row = this.closest('tr');
+    document.getElementById('amount').value = row.children[2].textContent;
+    document.getElementById('method').value = row.children[3].textContent;
+    document.getElementById('card').value = '239328392382'; // Replace with actual data source
+    document.getElementById('fullname').value = 'Ashianna Kim Fernandez'; // Replace with actual data
+
+    document.getElementById('viewModal').style.display = 'flex';
+  });
+});
+
+function closeModal() {
+  document.getElementById('viewModal').style.display = 'none';
+}
+  </script>
+  <script>
+    function showContent(type) {
+      // Update active tab
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      document.querySelector(`.tab[onclick="showContent('${type}')"]`).classList.add('active');
+      
+      // Show/hide content
+      document.getElementById('seller-content').classList.remove('active');
+      document.getElementById('buyer-content').classList.remove('active');
+      document.getElementById(`${type}-content`).classList.add('active');
+    }
+    
+    // Status filter functionality
+    document.querySelectorAll('.status-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.status-tab').forEach(t => {
+          t.classList.remove('active');
+        });
+        this.classList.add('active');
+        // Add your filtering logic here
+      });
+    });
+  </script>
+  <script>
+  function showContent(type) {
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.classList.remove('active');
+    });
+    document.querySelector(`.tab[onclick="showContent('${type}')"]`).classList.add('active');
+
+    document.getElementById('seller-content').classList.remove('active');
+    document.getElementById('buyer-content').classList.remove('active');
+    document.getElementById(`${type}-content`).classList.add('active');
+
+    // Reapply status filter on tab change
+    const currentStatus = document.querySelector('.status-tab.active').textContent.trim();
+    filterRows(currentStatus);
+  }
+
+  // Status filter click event
+  document.querySelectorAll('.status-tab').forEach(tab => {
+    tab.addEventListener('click', function () {
+      document.querySelectorAll('.status-tab').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+
+      const status = this.textContent.trim();
+      filterRows(status);
+    });
+  });
+
+  // Filter rows based on selected status
+  function filterRows(status) {
+    const activeContent = document.querySelector('.content-section.active');
+    const rows = activeContent.querySelectorAll('tbody tr');
+
+    rows.forEach(row => {
+      const rowStatus = row.querySelector('.status').textContent.trim();
+      if (status === 'All Status' || rowStatus === status) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

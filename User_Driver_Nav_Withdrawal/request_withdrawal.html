@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Earnings</title>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="../User_Driver_Nav_Withdrawal/request_withdrawal.css"/>
+</head>
+<body>
+   <aside>
+    <div class="logo">
+      <img src="logo_1.png" alt="CartIT x Driver Logo" />
+    </div>
+    <hr class="logo-divider">
+    <p class="menu-title">Main Menu</p>
+
+      <nav>
+        <ul class="sidebar-list">
+          <li class="active"><a href="../Buyer_Dashboard/dashboard.html"><i class='bx bx-layer'></i>Dashboard</a></li>
+          <li><a href="../User_Driver_Nav_Deliviries/nav_deliviries.html"><i class='bx bx-package'></i>Deliveries</a></li>
+          <li><a href="../User_Driver_Nav_Withdrawal/withdrawal.css"><i class='bx bx-money'></i>Cash Deposit</a></li>
+          <li><a href="../User_Driver_Nav_Settings/driverprofile.php"><i class='bx bx-user'></i>My Profile</a></li>
+        </ul>
+      </nav>
+
+    <button class="logout"><i class='bx bx-log-out'></i> Log-out</button>
+  </aside>
+ 
+
+   <div class="card">
+        <h2>Request Withdrawal</h2>
+        <p style="font-size: 13px; color: #555;">
+            Choose your preferred payout method: Bank Account, GCash, or PayPal. Enter the amount you'd like to withdraw,
+            provide the necessary payment details, and submit your request. Withdrawals will be processed within 1–2 business days.
+        </p>
+
+<form id="withdrawForm">
+    <div class="form-group">
+        <label for="amount">Withdrawal Amount</label>
+        <input type="number" id="amount" name="amount" placeholder="enter amount" required>
+    </div>
+    <div class="form-group">
+        <label for="method">Payment Method</label>
+        <input type="text" id="method" name="method" placeholder="enter your payment method" required>
+    </div>
+    <div class="form-group">
+        <label for="card_number">Card Number</label>
+        <input type="text" id="card_number" name="card_number" placeholder="enter your card number" required>
+    </div>
+    <div class="form-group">
+        <label for="card_name">Card Full Name</label>
+        <input type="text" id="card_name" name="card_name" placeholder="enter your card name" required>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" id="agree" name="agree" required>
+        <label for="agree">By checking, you agree to CartIT <a href="#" style="color:#0043b3;">Terms of Condition</a></label>
+    </div>
+
+    <!-- ✅ Submit button inside the form -->
+    <button type="button" class="submit-btn" onclick="submitForm()">Request Withdrawal</button>
+</form>
+
+
+</div>
+
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function submitForm() {
+        const form = document.getElementById('withdrawForm');
+        const formData = new FormData(form);
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        Swal.fire({
+            title: 'Sending Request...',
+            text: 'Please wait while we process your withdrawal request.',
+            icon: 'info',
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            showConfirmButton: false,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
+
+        fetch('submit_withdrawal.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            Swal.fire({
+                title: 'Request Sent!',
+                text: 'Your withdrawal request has been submitted successfully.',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+            form.reset();
+        })
+        .catch(error => {
+            Swal.fire({
+                title: 'Error',
+                text: 'Something went wrong. Please try again.',
+                icon: 'error'
+            });
+        });
+    }
+</script>

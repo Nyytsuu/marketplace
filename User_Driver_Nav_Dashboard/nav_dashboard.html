@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CartIt Driver Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="container">
+    <aside>
+      <div class="logo">
+        <img src="../pictures/driver.png" alt="CartIT x Driver Logo" />
+      </div>
+      <hr class="logo-divider">
+      <p class="menu-title">Main Menu</p>
+      <nav>
+        <ul class="sidebar-list">
+          <li class="active"><a href="#"><i class='bx bx-layer'></i>Dashboard</a></li>
+          <li><a href="#"><i class='bx bx-package'></i>Deliveries</a></li>
+          <li><a href="#"><i class='bx bx-money'></i>Cash Deposit</a></li>
+          <li><a href="#"><i class='bx bx-user'></i>My Profile</a></li>
+        </ul>
+      </nav>
+      <button class="logout"><i class='bx bx-log-out'></i> Log-out</button>
+    </aside>
+
+    <main>
+      <header class="user-info-container">
+        <div class="user-info-top">
+          <div class="user-profile">
+            <i class='bx bxs-user-circle'></i>
+          </div>
+          <div class="user-text">
+            <p>@drivername</p>
+            <p>driver@gmail.com</p>
+          </div>
+        </div>
+        <hr class="user-info-divider">
+      </header>
+
+      <section class="top-info">
+        <div class="card">
+          <p>Total Delivered</p>
+          <h2>234</h2>
+        </div>
+        <div class="card">
+          <p>Account Balance</p>
+          <h2>₱340</h2>
+        </div>
+        <div class="card">
+          <p>Pending Deliveries</p>
+          <h2>3</h2>
+        </div>
+      </section>
+
+      <section class="pending">
+        <h3>Pending Deliveries</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Delivery ID</th>
+              <th>Order ID</th>
+              <th>Customer Name</th>
+              <th>Delivery Address</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+
+         <tr>
+              <td>002349</td>
+              <td>2345</td>
+              <td>John Doe</td>
+              <td>123 Main St, Manila</td>
+              <td>
+                <button class=
+                "accept">✔ Accept</button>
+                <button class="details">📄 Details</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>002349</td>
+              <td>2345</td>
+              <td>John Doe</td>
+              <td>123 Main St, Manila</td>
+              <td>
+                <button class="accept">✔ Accept</button>
+                <button class="details">📄 Details</button>
+              </td>
+            </tr>
+
+        <tr>
+              <td>002349</td>
+              <td>2345</td>
+              <td>John Doe</td>
+              <td>123 Main St, Manila</td>
+              <td>
+                <button class="accept">✔ Accept</button>
+                <button class="details">📄 Details</button>
+              </td>
+            </tr>
+
+          <tr>
+              <td>002349</td>
+              <td>2345</td>
+              <td>John Doe</td>
+              <td>123 Main St, Manila</td>
+              <td>
+                <button class="accept">✔ Accept</button>
+                <button class="details">📄 Details</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>002349</td>
+              <td>2345</td>
+              <td>John Doe</td>
+              <td>123 Main St, Manila</td>
+              <td>
+                <button class="accept">✔ Accept</button>
+                <button class="details">📄 Details</button>
+              </td>
+            </tr>
+
+         <tr>
+              <td>002349</td>
+              <td>2345</td>
+              <td>John Doe</td>
+              <td>123 Main St, Manila</td>
+              <td>
+                <button class="accept">✔ Accept</button>
+                <button class="details">📄 Details</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>002349</td>
+              <td>2345</td>
+              <td>John Doe</td>
+              <td>123 Main St, Manila</td>
+              <td>
+                <button class="accept">✔ Accept</button>
+                <button class="details">📄 Details</button>
+              </td>
+            </tr>
+
+          <tr>
+              <td>002349</td>
+              <td>2345</td>
+              <td>John Doe</td>
+              <td>123 Main St, Manila</td>
+              <td>
+                <button class="accept">✔ Accept</button>
+                <button class="details">📄 Details</button>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+    </main>
+
+    
+  </div>
+
+<div class="modal" id="popupModal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div id="modal-body">
+  <button class="cancel-btn">Close</button>
+</div>
+
+</body>
+
+</html>
+
+<script>
+const modal = document.getElementById("popupModal");
+const modalContent = modal.querySelector(".modal-content");
+const modalBody = document.getElementById("modal-body");
+
+function showModal(contentHTML) {
+  modalBody.innerHTML = contentHTML;
+  modal.style.display = "flex";
+
+  modalContent.classList.remove("animate__fadeOutUp");
+  modalContent.classList.add("animate__fadeInDown");
+
+  setTimeout(() => bindDynamicButtons(), 50);
+}
+
+function hideModal() {
+  modalContent.classList.remove("animate__fadeInDown");
+  modalContent.classList.add("animate__fadeOutUp");
+
+  setTimeout(() => {
+    modal.style.display = "none";
+    modalContent.classList.remove("animate__fadeOutUp");
+  }, 500); 
+}
+
+// Accept Button
+document.querySelectorAll(".accept").forEach(button => {
+  button.addEventListener("click", () => {
+showModal(`
+  <h2>Confirm Acceptance</h2>
+  <p>Are you sure you want to accept this order?</p>
+  <div class="button-group">
+    <button class="confirm-btn">Yes, Accept</button>
+    <button class="cancel-btn">Cancel</button>
+  </div>
+`);
+  });
+});
+
+// Details Button
+document.querySelectorAll(".details").forEach(button => {
+  button.addEventListener("click", () => {
+    showModal(`
+      <h2>Order Details</h2>
+      <p><strong>Order #:</strong> 002349</p>
+      <p><strong>Product ID:</strong> 2345</p>
+      <p><strong>Customer:</strong> John Doe</p>
+      <p><strong>Address:</strong> 123 Main St, Manila</p>
+      <div class="button-group">
+     <button class="cancel-btn">Close</button>
+      </div>
+    `);
+  });
+});
+
+// Dynamic Button Binding
+function bindDynamicButtons() {
+  document.querySelector(".confirm-btn")?.addEventListener("click", () => {
+    hideModal();
+    Swal.fire({
+      title: "Accepted!",
+      text: "The order has been accepted.",
+      icon: "success",
+      showClass: {
+        popup: 'animate__animated animate__fadeIn'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOut'
+      }
+    });
+  });
+
+  document.querySelectorAll(".cancel-btn").forEach(btn => {
+    btn.addEventListener("click", () => hideModal());
+  });
+}
+
+window.onclick = (e) => {
+  if (e.target === modal) hideModal();
+};
+</script>
+

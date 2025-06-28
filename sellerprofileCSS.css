@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;}
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background-color: #0057e7;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sidebar .logo {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .sidebar .logo h1 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+  }
+  .sidebar .logo .tagline {
+    font-size: 0.9em;
+    opacity: 0.8;
+  }
+  .sidebar .menu {
+    list-style: none;
+    width: 100%;
+  }
+  .sidebar .menu li {
+    width: 100%;
+  }
+  .sidebar .menu li a {
+    display: block;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+  }
+  .sidebar .menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Main content and topbar */
+  .main-content {
+    margin-left: 240px; /* space for sidebar */
+    padding: 20px;
+  }
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  .topbar .search {
+    display: flex;
+  }
+  .topbar .search input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+    background-color: #f1f3f4;
+    font-size: 0.9em;
+  }
+  .topbar .search button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    background-color: #0057e7;
+    color: #fff;
+    cursor: pointer;
+  }
+  .topbar .topbar-right {
+    display: flex;
+    align-items: center;
+  }
+  .topbar .icon {
+    font-size: 1.2em;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  .profile-info {
+    display: flex;
+    align-items: center;
+  }
+  .profile-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .profile-text p {
+    font-size: 0.95em;
+    font-weight: bold;
+  }
+  .profile-text small {
+    color: #666;
+  }
+  
+  /* Profile and Shipping section */
+  .profile-section {
+    margin-top: 20px;
+  }
+  /* Card container */
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-header h3 {
+    margin-bottom: 0;
+    font-size: 1.2em;
+  }
+  .edit-btn {
+    background-color: #0057e7;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+  .card-content {
+    display: flex;
+    margin-top: 20px;
+  }
+  /* Columns inside cards */
+  .left-column, .right-column {
+    flex: 1;
+  }
+  .profile-card .left-column {
+    flex: 0 0 150px;
+    text-align: center;
+  }
+  .profile-card .left-column .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  .left-column p, .right-column p {
+    margin: 10px 0;
+  }
+  /* Shipping card has no edit button, so header is just the title */
+  .shipping-card h3 {
+    font-size: 1.2em;
+  }
+  .shipping-card .card-content {
+    /* Align items to top in shipping card */
+    align-items: flex-start;
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .sidebar {
+      display: none;
+    }
+    .main-content {
+      margin-left: 0;
+    }
+    .card-content {
+      flex-direction: column;
+    }
+    .profile-card .left-column, .profile-card .right-column {
+      flex: none;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  

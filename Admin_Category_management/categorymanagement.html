@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Category Management</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="categorymanagement.css" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 font-poppins">
+  <div class="grid-container">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-title">
+        <div class="sidebar-brand">
+          <img src="../5. pictures/admin.png" alt="Logo" class="logo" />
+        </div>
+      </div>
+      <ul class="sidebar-list">
+        <div class="sidebar-line"></div>
+        <li class="sidebar-list-item">
+          <a href="../Admin_Dashboard/dashboard.php">
+            <span class="material-icons-outlined">dashboard</span>
+            Dashboard
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="../Admin_User_management/user-management.php">
+            <span class="material-icons-outlined">inventory_2</span>
+            User Management
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="../Admin_order_managment/ordermanagement.php">
+            <span class="material-icons-outlined">add_shopping_cart</span>
+            Order Management
+          </a>
+        </li>
+        <li class="sidebar-list-item dashboard-item">
+          <a href="../admin">
+            <span class="material-icons-outlined">shopping_cart</span>
+            Category Management
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="../Admin_Withdrawal/withdrawal.php">
+            <span class="material-icons-outlined">poll</span>
+            Withdrawal Management
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="../Admin_Delivery_Management/delivery_man.php">
+            <span class="material-icons-outlined">local_shipping</span>
+            Delivery Management
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Header -->
+    <header class="header">
+      <form class="search-bar">
+        <i class="bx bx-search text-gray-500 mr-2"></i>
+        <input type="text" placeholder="Search" class="bg-transparent outline-none w-full text-sm" />
+      </form>
+      <div class="relative flex items-center space-x-4">
+        <i class='bx bxs-user-circle text-3xl'></i>
+        <div class="text-sm text-right">
+          <p class="font-medium">@Yanna Fernandez</p>
+          <p class="text-gray-500 text-xs">yannafern@gmail.com</p>
+        </div>
+        <i class='bx bx-chevron-down cursor-pointer text-xl' id="dropdownToggle"></i>
+        <div class="absolute top-12 right-0 bg-white shadow rounded hidden" id="logoutPopup">
+          <button class="block px-4 py-2 text-sm hover:bg-gray-100" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+      <section class="content">
+        <h2>Category Management</h2>
+        <p>Category Management is the process of organizing products into specific groups to improve sales, customer experience, and inventory management.</p>
+        <table class="order-table w-full text-sm text-left">
+          <thead>
+            <tr>
+              <th><input type="checkbox" /></th>
+              <th>Category ID</th>
+              <th>Category Name</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><input type="checkbox" /></td><td>W345</td><td>Women Fashion</td><td><span class="status inactive">Inactive</span></td><td class="actions"><button class="edit-btn">edit</button><button class="delete-btn">delete</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>M456</td><td>Men Fashion</td><td><span class="status active">Active</span></td><td class="actions"><button class="edit-btn">edit</button><button class="delete-btn">delete</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>J234</td><td>Jewelry</td><td><span class="status active">Active</span></td><td class="actions"><button class="edit-btn">edit</button><button class="delete-btn">delete</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>S512</td><td>Shoes</td><td><span class="status inactive">Inactive</span></td><td class="actions"><button class="edit-btn">edit</button><button class="delete-btn">delete</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>K389</td><td>Kids</td><td><span class="status active">Active</span></td><td class="actions"><button class="edit-btn">edit</button><button class="delete-btn">delete</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>G812</td><td>Gadgets</td><td><span class="status inactive">Inactive</span></td><td class="actions"><button class="edit-btn">edit</button><button class="delete-btn">delete</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>T721</td><td>Tools</td><td><span class="status active">Active</span></td><td class="actions"><button class="edit-btn">edit</button><button class="delete-btn">delete</button></td></tr>
+          </tbody>
+        </table>
+        <div class="pagination">
+          <button>Prev</button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>Next</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('dropdownToggle');
+    const popup = document.getElementById('logoutPopup');
+
+    toggleBtn.addEventListener('click', () => {
+      popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (!toggleBtn.contains(e.target) && !popup.contains(e.target)) {
+        popup.style.display = 'none';
+      }
+    });
+
+    document.getElementById('logoutBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      alert("Logging out...");
+    });
+  </script>
+</body>
+</html>

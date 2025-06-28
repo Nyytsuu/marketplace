@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="seller-management.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <title>Seller Management</title>
+</head>
+<body>
+    <div class="grid-container">
+             <div class="header">
+             <form action="" method="get" class="search-bar">
+                <input type="text" name="search" placeholder="Search">
+                <i class="bx bx-search"></i>
+             </form>
+             <div class="header-right">
+                   <i class='bx bxs-user-circle' style="font-size:50px;"></i><br>
+             </div>
+               <div class="info">
+                <p>@Yanna Fernandez</p>
+                <p>yannafern@gmail.com</p>
+               </div>
+               <div class="chev">
+                <i class='bx bx-chevron-down' id="dropdownToggle" style="cursor: pointer; font-size: 24px;"></i>
+               </div>
+                <div class="logout-popup" id="logoutPopup">
+              <button id="logoutBtn">Logout</button>
+                </div>
+             </div>
+
+
+            </div>
+             <!-- Sidebar -->
+             <aside class="sidebar">
+                <div class="logo">
+                    <img src="admin logo.png" alt="admin-logo" width="150px">
+                </div>
+                <nav class="menu">
+                    <ul class="sidebar-list">
+    
+                        <li class="sidebar-list-item">
+                            <a href="#" class="menu-item">
+                                <i class="bx bx-home"></i> 
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+    
+                        <li class="sidebar-list-item">
+                            <a href="#" class="menu-item active">
+                                <i class='bx bx-user'></i>
+                                <span>User Management</span>
+                            </a>
+                        </li>
+    
+                        <li class="sidebar-list-item">
+                            <a href="#" class="menu-item">
+                                <i class='bx bx-bookmark'></i>
+                                <span>Order Management</span>
+                            </a>
+                        </li>
+    
+                        <li class="sidebar-list-item">
+                            <a href="#" class="menu-item">
+                                <i class='bx bx-edit'></i>
+                                <span>Category Management</span>
+                            </a>
+                        </li>
+    
+                        <li class="sidebar-list-item">
+                            <a href="#" class="menu-item">
+                                <i class="bx bx-credit-card"></i> 
+                                <span>Withdrawal Management</span>
+                            </a>
+                        </li>
+    
+                        <li class="sidebar-list-item">
+                            <a href="#" class="menu-item">
+                                <i class='bx bxs-truck' ></i>                            
+                                <span>Delivery Management</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <main class="main">
+                 <section class="content">
+        <h2>User Management</h2>
+        <p>Displays a list of all platform users, including buyers and sellers.</p>
+
+        <div class="tabs">
+          <button class="tab active">Seller</button>
+          <button class="tab">Buyer</button>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th><input type="checkbox" /></th>
+                <th>SELLER ID</th>
+                <th>STORE NAME</th>
+                <th>EMAIL</th>
+                <th>DATE JOINED</th>
+                <th>SELLER STATUS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>P1</td>
+                <td>Tempest</td>
+                <td>tempest@gmail.com</td>
+                <td>03/01/25</td>
+                <td><span class="status active">Active</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>P2</td>
+                <td>Queens</td>
+                <td>queens@gmail.com</td>
+                <td>03/01/25</td>
+                <td><span class="status active" width="100px">Active</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>P3</td>
+                <td>Kings</td>
+                <td>kings@gmail.com</td>
+                <td>03/02/25</td>
+                <td><span class="status suspended" width="100px">Suspended</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>P4</td>
+                <td>Ace</td>
+                <td>ace@gmail.com</td>
+                <td>03/02/25</td>
+                <td><span class="status active" width="100px">Active</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>P5</td>
+                <td>Spade</td>
+                <td>spade@gmail.com</td>
+                <td>03/03/25</td>
+                <td><span class="status suspended" width="100px">Suspended</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>P6</td>
+                <td>Hearts</td>
+                <td>hearts@gmail.com</td>
+                <td>03/03/25</td>
+                <td><span class="status suspended" width="100px">Suspended</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="table-footer">
+             <div class="entries-info">Showing 1 to 1 entities</div>
+             <div class="pagination">
+              <button class="page-btn">Prev</button>
+              <button class="page-btn current">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn">3</button>
+              <button class="page-btn">4</button>
+              <button class="page-btn">Next</button>
+  </div>
+</div>
+        </div>
+      </section>
+            </main>
+    </div>
+    <script>
+        const toggleBtn = document.getElementById('dropdownToggle');
+        const popup = document.getElementById('logoutPopup');
+      
+        toggleBtn.addEventListener('click', () => {
+          popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+        });
+      
+        window.addEventListener('click', function(e) {
+          if (!toggleBtn.contains(e.target) && !popup.contains(e.target)) {
+            popup.style.display = 'none';
+          }
+        });
+      
+
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+          alert("Logging out..."); 
+        });
+
+           const tabs = document.querySelectorAll('.tab');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+      </script>
+</body>
+</html>

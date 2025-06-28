@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <title>Seller Dashboard</title>
+</head>
+<body>
+    <div class="grid-container">
+        
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <form action="" method="get" class="search-bar">
+                    <input type="text" name="search" placeholder="Search for stuff">
+                    <i class="bx bx-search"></i> 
+                </form>
+            </div>
+            <div class="header-right">
+                <i class="bx bx-user user-icon" style="font-size: 30px;" style="color: black;"></i> <br>
+                 <p font-size="500px">|</p><br>
+                <i class='bx bx-cog' style="font-size: 30px;"></i> <br>
+                <i class='bx bxs-user-circle' style="font-size:50px;"></i><br>
+            </div>
+            <div class="info">
+                <p>@Yanna Fernandez</p>
+                <p>yannafern@gmail.com</p>
+            </div>
+            <div class="chev">
+                <i class='bx bx-chevron-down' id="dropdownToggle" style="cursor: pointer; font-size: 24px;"></i>
+            </div>
+            <div class="logout-popup" id="logoutPopup">
+              <button id="logoutBtn">Logout</button>
+            </div>
+            
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logoseller.png" alt="cartit-logo" width="150px">
+            </div>
+            <p class="menu-title">MAIN MENU</p>
+            <nav class="menu">
+                <ul class="sidebar-list">
+
+                    <li class="sidebar-list-item">
+                        <a href="#" class="menu-item">
+                            <i class="bx bx-home"></i> 
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-list-item">
+                        <a href="#" class="menu-item">
+                            <i class="bx bx-store"></i> 
+                            <span>Shop</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-list-item">
+                        <a href="#" class="menu-item active">
+                            <i class="bx bx-cart-add"></i> 
+                            <span>Products</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-list-item">
+                        <a href="#" class="menu-item">
+                            <i class="bx bx-package"></i> 
+                            <span>Orders</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-list-item">
+                        <a href="#" class="menu-item">
+                            <i class="bx bx-credit-card"></i> 
+                            <span>Transaction</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-container">
+            <div class="main-title">
+                <p class="font-weight-bold">ADD NEW PRODUCT</p>
+            </div>
+            <form class="add-product-form">
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" name="productName" required>
+        
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" required>
+        
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+        
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" name="image">
+        
+                <button type="submit">Add Product</button>
+            </form>
+        </main>
+    </div>
+    <script>
+        const toggleBtn = document.getElementById('dropdownToggle');
+        const popup = document.getElementById('logoutPopup');
+      
+        toggleBtn.addEventListener('click', () => {
+          popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+        });
+      
+        window.addEventListener('click', function(e) {
+          if (!toggleBtn.contains(e.target) && !popup.contains(e.target)) {
+            popup.style.display = 'none';
+          }
+        });
+      
+
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+          alert("Logging out..."); 
+        });
+      </script>
+      
+</body>
+</html>
